@@ -1,10 +1,10 @@
 #!/bin/bash
 
-stage=2
+stage=0
 stop_stage=2
 
 PYTHON_ENVIRONMENT=contentvec
-CONDA_ROOT=/mnt/anaconda3
+CONDA_ROOT=/root/anaconda3
 
 source ${CONDA_ROOT}/etc/profile.d/conda.sh
 
