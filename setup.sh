@@ -37,7 +37,7 @@ if [ $stage -le 1 ] && [ $stop_stage -ge 1 ]; then
         python -m pip install --editable ./
     fi
     # optionally do this if related error occurs
-    python setup.py build_ext --inplace
+    # python setup.py build_ext --inplace
     
     python -m pip install scipy
     python -m pip install soundfile
