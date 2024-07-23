@@ -1,17 +1,17 @@
 #!/bin/bash
 
-expdir=./tmp
-mkdir -p $expdir
+expdir="$(pwd)/outputs"
+# mkdir -p "$expdir"
 
 
 HYDRA_FULL_ERROR=1 python -u ./fairseq/fairseq_cli/hydra_train.py  \
-    --config-dir ./contentvec/config/contentvec \
+    --config-dir ./contentvec/contentvec/config/contentvec \
     --config-name contentvec \
     hydra.run.dir=${expdir} \
-    task.data=./metadata \
-    task.label_dir=./label \
+    task.data=${expdir}/metadata \
+    task.label_dir="${expdir}/label" \
     task.labels=["km"] \
-    task.spk2info=./spk2info.dict \
+    task.spk2info=${expdir}/spk2info.dict \
     task.crop=true \
     dataset.train_subset=train \
     dataset.valid_subset=valid \
